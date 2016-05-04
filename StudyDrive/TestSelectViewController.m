@@ -41,7 +41,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 9;
+    return _dataArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
@@ -56,6 +56,9 @@
         cell.numberLabel.layer.cornerRadius = 8;
         
     }
+    TestSelectModle *model = _dataArray[indexPath.row];
+    cell.numberLabel.text=model.pid;
+    cell.titleLabel.text=model.pname;
     return cell;
     
 }
