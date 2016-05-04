@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SelectView.h"
+#import "FirstViewController.h"
 @interface ViewController ()
 {
     SelectView * _selectView;
@@ -29,7 +30,7 @@
             break;
         case 101:
         {
-            
+            [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
         }
              break;
         case 102:
