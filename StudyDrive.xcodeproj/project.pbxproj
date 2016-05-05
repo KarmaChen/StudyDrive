@@ -179,6 +179,10 @@
 		E6033C531CDA438F00ABD78F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6033C521CDA438F00ABD78F /* libsqlite3.tbd */; };
 		E6033C561CDA444A00ABD78F /* MyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6033C551CDA444A00ABD78F /* MyDataManager.m */; };
 		E6033C5A1CDA4AFD00ABD78F /* TestSelectModle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6033C591CDA4AFD00ABD78F /* TestSelectModle.m */; };
+		E60EBBCB1CDAEAC40078E232 /* AnswerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBCA1CDAEAC40078E232 /* AnswerScrollView.m */; };
+		E60EBBCF1CDAF7860078E232 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBCD1CDAF7860078E232 /* AnswerTableViewCell.m */; };
+		E60EBBD01CDAF7860078E232 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */; };
+		E60EBBD31CDB3E020078E232 /* AnsmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */; };
 		E67900261CD83D8B0092BEEA /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E67900251CD83D8B0092BEEA /* SelectView.m */; };
 		E6FFF3311CD2539600C9FA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3301CD2539600C9FA7C /* main.m */; };
 		E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3331CD2539600C9FA7C /* AppDelegate.m */; };
@@ -418,6 +422,13 @@
 		E6033C551CDA444A00ABD78F /* MyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataManager.m; sourceTree = "<group>"; };
 		E6033C581CDA4AFD00ABD78F /* TestSelectModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelectModle.h; sourceTree = "<group>"; };
 		E6033C591CDA4AFD00ABD78F /* TestSelectModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSelectModle.m; sourceTree = "<group>"; };
+		E60EBBC91CDAEAC40078E232 /* AnswerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerScrollView.h; sourceTree = "<group>"; };
+		E60EBBCA1CDAEAC40078E232 /* AnswerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerScrollView.m; sourceTree = "<group>"; };
+		E60EBBCC1CDAF7860078E232 /* AnswerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTableViewCell.h; sourceTree = "<group>"; };
+		E60EBBCD1CDAF7860078E232 /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
+		E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		E60EBBD11CDB3E020078E232 /* AnsmerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnsmerViewController.h; sourceTree = "<group>"; };
+		E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsmerViewController.m; sourceTree = "<group>"; };
 		E67900241CD83D8B0092BEEA /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		E67900251CD83D8B0092BEEA /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		E6FFF32C1CD2539600C9FA7C /* StudyDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,6 +509,8 @@
 				E6033AEC1CD9AF1800ABD78F /* FirstViewController.m */,
 				E6033AF71CDA2ABC00ABD78F /* TestSelectViewController.h */,
 				E6033AF81CDA2ABC00ABD78F /* TestSelectViewController.m */,
+				E60EBBD11CDB3E020078E232 /* AnsmerViewController.h */,
+				E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -511,6 +524,9 @@
 				E6033AFD1CDA2FF900ABD78F /* TestSelectTableViewCell.h */,
 				E6033AFE1CDA2FF900ABD78F /* TestSelectTableViewCell.m */,
 				E6033AFF1CDA2FF900ABD78F /* TestSelectTableViewCell.xib */,
+				E60EBBCC1CDAF7860078E232 /* AnswerTableViewCell.h */,
+				E60EBBCD1CDAF7860078E232 /* AnswerTableViewCell.m */,
+				E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -719,11 +735,22 @@
 			name = modle;
 			sourceTree = "<group>";
 		};
+		E60EBBC81CDAE9EE0078E232 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E67900241CD83D8B0092BEEA /* SelectView.h */,
+				E67900251CD83D8B0092BEEA /* SelectView.m */,
+				E60EBBC91CDAEAC40078E232 /* AnswerScrollView.h */,
+				E60EBBCA1CDAEAC40078E232 /* AnswerScrollView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		E6FFF3231CD2539600C9FA7C = {
 			isa = PBXGroup;
 			children = (
-				E6033C571CDA4AC500ABD78F /* modle */,
 				E6033C521CDA438F00ABD78F /* libsqlite3.tbd */,
+				E6033C571CDA4AC500ABD78F /* modle */,
 				E6033B021CDA41E100ABD78F /* libs */,
 				E6FFF3621CD255E400C9FA7C /* SourceMaterial */,
 				E6FFF32E1CD2539600C9FA7C /* StudyDrive */,
@@ -746,14 +773,13 @@
 		E6FFF32E1CD2539600C9FA7C /* StudyDrive */ = {
 			isa = PBXGroup;
 			children = (
+				E60EBBC81CDAE9EE0078E232 /* view */,
 				E6033AEE1CD9E32000ABD78F /* cell */,
-				E6033AE71CD9AEBD00ABD78F /* controllers */,
 				E6FFF3321CD2539600C9FA7C /* AppDelegate.h */,
 				E6FFF3331CD2539600C9FA7C /* AppDelegate.m */,
+				E6033AE71CD9AEBD00ABD78F /* controllers */,
 				E6FFF3351CD2539600C9FA7C /* ViewController.h */,
 				E6FFF3361CD2539600C9FA7C /* ViewController.m */,
-				E67900241CD83D8B0092BEEA /* SelectView.h */,
-				E67900251CD83D8B0092BEEA /* SelectView.m */,
 				E6FFF3381CD2539600C9FA7C /* Main.storyboard */,
 				E6FFF33B1CD2539600C9FA7C /* Assets.xcassets */,
 				E6FFF33D1CD2539600C9FA7C /* LaunchScreen.storyboard */,
@@ -1086,6 +1112,7 @@
 				E6033C3A1CDA423300ABD78F /* 668.png in Resources */,
 				E6033C3D1CDA423300ABD78F /* 671.png in Resources */,
 				E6033C401CDA423300ABD78F /* 677.png in Resources */,
+				E60EBBD01CDAF7860078E232 /* AnswerTableViewCell.xib in Resources */,
 				E6033C241CDA423300ABD78F /* 322.png in Resources */,
 				E6033BE41CDA423300ABD78F /* 258.png in Resources */,
 				E6033BF01CDA423300ABD78F /* 270.png in Resources */,
@@ -1143,16 +1170,19 @@
 			files = (
 				E6FFF3371CD2539600C9FA7C /* ViewController.m in Sources */,
 				E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */,
+				E60EBBCF1CDAF7860078E232 /* AnswerTableViewCell.m in Sources */,
 				E6033AF51CD9E39300ABD78F /* FirstTableViewCell.m in Sources */,
 				E6033C561CDA444A00ABD78F /* MyDataManager.m in Sources */,
 				E6033C4B1CDA423300ABD78F /* FMDatabase.m in Sources */,
 				E6033AF91CDA2ABC00ABD78F /* TestSelectViewController.m in Sources */,
 				E6033C4E1CDA423300ABD78F /* FMDatabaseQueue.m in Sources */,
+				E60EBBCB1CDAEAC40078E232 /* AnswerScrollView.m in Sources */,
 				E6033C4F1CDA423300ABD78F /* FMResultSet.m in Sources */,
 				E6033C5A1CDA4AFD00ABD78F /* TestSelectModle.m in Sources */,
 				E6033C4D1CDA423300ABD78F /* FMDatabasePool.m in Sources */,
 				E6033AED1CD9AF1800ABD78F /* FirstViewController.m in Sources */,
 				E67900261CD83D8B0092BEEA /* SelectView.m in Sources */,
+				E60EBBD31CDB3E020078E232 /* AnsmerViewController.m in Sources */,
 				E6FFF3311CD2539600C9FA7C /* main.m in Sources */,
 				E6033B001CDA2FF900ABD78F /* TestSelectTableViewCell.m in Sources */,
 				E6033C4C1CDA423300ABD78F /* FMDatabaseAdditions.m in Sources */,

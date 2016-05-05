@@ -1,14 +1,14 @@
 //
-//  TestSelectTableViewCell.m
+//  AnswerTableViewCell.m
 //  StudyDrive
 //
-//  Created by Karma on 16/5/4.
+//  Created by Karma on 16/5/5.
 //  Copyright © 2016年 陈昆涛. All rights reserved.
 //
 
-#import "TestSelectTableViewCell.h"
+#import "AnswerTableViewCell.h"
 
-@implementation TestSelectTableViewCell
+@implementation AnswerTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -18,7 +18,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    
 }
 
 @end

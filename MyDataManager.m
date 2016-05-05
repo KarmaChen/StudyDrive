@@ -17,6 +17,7 @@
         NSString * path = [[NSBundle mainBundle]pathForResource:@"data" ofType:@"sqlite"];
         dataBase = [[FMDatabase alloc]initWithPath:path];
         
+        
     }
     //返回一个BOOL值
     if ([dataBase open]) {

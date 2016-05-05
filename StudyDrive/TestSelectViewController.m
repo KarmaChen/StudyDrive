@@ -9,6 +9,7 @@
 #import "TestSelectViewController.h"
 #import "TestSelectTableViewCell.h"
 #import "TestSelectModle.h"
+#import "AnsmerViewController.h"
 @interface TestSelectViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tableview;
@@ -40,12 +41,14 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+//**
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _dataArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
+//**
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * cellId = @"TestSelectTableViewCell";
     TestSelectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -61,6 +64,9 @@
     cell.titleLabel.text=model.pname;
     return cell;
     
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.navigationController pushViewController:[[AnsmerViewController alloc]init] animated:YES];
 }
 
 /*
