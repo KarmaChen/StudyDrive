@@ -66,7 +66,9 @@
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.navigationController pushViewController:[[AnsmerViewController alloc]init] animated:YES];
+    AnsmerViewController *avc =[[AnsmerViewController alloc]init];
+    avc.number=indexPath.row;
+    [self.navigationController pushViewController:avc animated:YES];
 }
 
 /*

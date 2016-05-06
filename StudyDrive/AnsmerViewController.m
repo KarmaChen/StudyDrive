@@ -8,7 +8,8 @@
 
 #import "AnsmerViewController.h"
 #import "AnswerScrollView.h"
-
+#import "MyDataManager.h"
+#import "AnswerModel.h"
 @interface AnsmerViewController ()
 
 @end
@@ -20,7 +21,14 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout=UIRectEdgeNone;
     self.view.backgroundColor=[UIColor whiteColor];
-    NSArray *arr =@[@"5",@"4",@"3",@"2",@"1"];
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    NSArray *array =[MyDataManager getData:answer];
+    for (int i =0; i<array.count-1; i++) {
+        AnswerModel *model=array[i];
+        if ([model.pid intValue]==_number+1) {
+            [arr addObject:model];
+        }
+    }
     AnswerScrollView * view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) whiteDataArray:arr];
     [self.view addSubview:view];
 }

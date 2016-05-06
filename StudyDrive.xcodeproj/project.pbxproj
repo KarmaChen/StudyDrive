@@ -184,6 +184,7 @@
 		E60EBBD01CDAF7860078E232 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */; };
 		E60EBBD31CDB3E020078E232 /* AnsmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */; };
 		E64177091CDC85D90089DF41 /* AnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64177081CDC85D90089DF41 /* AnswerModel.m */; };
+		E641770C1CDCC6220089DF41 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E641770B1CDCC6220089DF41 /* Tools.m */; };
 		E67900261CD83D8B0092BEEA /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E67900251CD83D8B0092BEEA /* SelectView.m */; };
 		E6FFF3311CD2539600C9FA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3301CD2539600C9FA7C /* main.m */; };
 		E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3331CD2539600C9FA7C /* AppDelegate.m */; };
@@ -432,6 +433,8 @@
 		E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsmerViewController.m; sourceTree = "<group>"; };
 		E64177071CDC85D90089DF41 /* AnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerModel.h; sourceTree = "<group>"; };
 		E64177081CDC85D90089DF41 /* AnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerModel.m; sourceTree = "<group>"; };
+		E641770A1CDCC6220089DF41 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		E641770B1CDCC6220089DF41 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E67900241CD83D8B0092BEEA /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		E67900251CD83D8B0092BEEA /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		E6FFF32C1CD2539600C9FA7C /* StudyDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -786,6 +789,8 @@
 				E6FFF3351CD2539600C9FA7C /* ViewController.h */,
 				E6FFF3361CD2539600C9FA7C /* ViewController.m */,
 				E6FFF3381CD2539600C9FA7C /* Main.storyboard */,
+				E641770A1CDCC6220089DF41 /* Tools.h */,
+				E641770B1CDCC6220089DF41 /* Tools.m */,
 				E6FFF33B1CD2539600C9FA7C /* Assets.xcassets */,
 				E6FFF33D1CD2539600C9FA7C /* LaunchScreen.storyboard */,
 				E6FFF3401CD2539600C9FA7C /* Info.plist */,
@@ -1184,6 +1189,7 @@
 				E60EBBCB1CDAEAC40078E232 /* AnswerScrollView.m in Sources */,
 				E6033C4F1CDA423300ABD78F /* FMResultSet.m in Sources */,
 				E6033C5A1CDA4AFD00ABD78F /* TestSelectModle.m in Sources */,
+				E641770C1CDCC6220089DF41 /* Tools.m in Sources */,
 				E6033C4D1CDA423300ABD78F /* FMDatabasePool.m in Sources */,
 				E64177091CDC85D90089DF41 /* AnswerModel.m in Sources */,
 				E6033AED1CD9AF1800ABD78F /* FirstViewController.m in Sources */,

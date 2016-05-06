@@ -8,6 +8,8 @@
 
 #import "AnswerScrollView.h"
 #import "AnswerTableViewCell.h"
+#import "AnswerModel.h"
+#import "Tools.h"
 #define SIZE self.frame.size
 @interface AnswerScrollView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>{
     
@@ -25,6 +27,7 @@
 -(instancetype)initWithFrame:(CGRect)frame whiteDataArray:(NSArray *)array{
     self = [super initWithFrame:frame];
     if (self) {
+        _currentPages =0;
         _dataArray = [[NSArray alloc]initWithArray:array];
         _scrollView = [[UIScrollView alloc]initWithFrame:frame];
         _scrollView.delegate=self;
@@ -86,6 +89,28 @@
         cell.numberLabel.layer.cornerRadius=10;
     }
     cell.numberLabel.text=[NSString stringWithFormat:@"%c",(char)('A'+indexPath.row)];
+    AnswerModel *model;
+    //左边分为两种情况1.第一页时
+    //2.不是第一页是加载前一页的数据
+    if (tableView==_leftTableView&&_currentPages==0) {
+        model=_dataArray[_currentPages];
+    }else if(tableView==_leftTableView&&_currentPages>0){
+        model=_dataArray[_currentPages-1];
+    }else if(tableView==_mainTableView&&_currentPages>0&&_currentPages<_dataArray.count-1){
+        model=_dataArray[_currentPages];
+    }else if(tableView==_mainTableView&&_currentPages==0){
+        model=_dataArray[_currentPages+1];
+    }else if(tableView==_mainTableView&&_currentPages==_dataArray.count-1){
+        model=_dataArray[_currentPages-1];
+    }else if(tableView==_rightTableView&&_currentPages==0){
+        model=_dataArray[_currentPages+2];
+    }else if(tableView==_rightTableView&&_currentPages<_dataArray.count-1){
+        model=_dataArray[_currentPages+1];
+    }
+    //选择题
+    if ( [model.mtype intValue]==1) {
+        cell.answerLabel.text=[[Tools getAnswerWithString:model.mquestion]objectAtIndex:indexPath.row+1];
+    }
     return cell;
     
     
@@ -94,11 +119,18 @@
 {
     CGPoint currentOffset= scrollVie.contentOffset;
     int page =(int)currentOffset.x/SIZE.width;
-    if (page<_dataArray.count-1) {
+    if (page<_dataArray.count-1&&page>0) {
         _scrollView.contentSize=CGSizeMake(currentOffset.x+ SIZE.width*2, 90);
         _mainTableView.frame=CGRectMake(currentOffset.x, 0, SIZE.width, SIZE.height);
         _leftTableView.frame=CGRectMake(currentOffset.x-SIZE.width, 0, SIZE.width, SIZE.height);
         _rightTableView.frame=CGRectMake(currentOffset.x+SIZE.width, 0, SIZE.width, SIZE.height);
     }
+    _currentPages=page;
+    [self reloadData];
+}
+-(void)reloadData{
+    [_leftTableView reloadData];
+    [_rightTableView reloadData];
+    [_mainTableView reloadData];
 }
 @end

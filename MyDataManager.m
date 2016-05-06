@@ -9,6 +9,7 @@
 #import "MyDataManager.h"
 #import "FMDatabase.h"
 #import "TestSelectModle.h"
+#import "AnswerModel.h"
 @implementation MyDataManager
 +(NSArray *)getData:(DataType)type{
     NSMutableArray * array = [[NSMutableArray alloc]init];
@@ -41,7 +42,28 @@
             }
         }
             break;
-            
+                case answer:
+                {
+                    NSString *sql = @"select mquestion,mdesc,mid,manswer,mimage,pid,pname,sid,sname,mtype from leaflevel";
+                    FMResultSet *rs = [dataBase executeQuery:sql];
+                    //返回的1的话继续读取 返回0的话停止读取
+                    while ([rs next]) {
+                        AnswerModel * model = [[AnswerModel alloc]init];
+                        model.mquestion = [rs stringForColumn:@"mquestion"];
+                        model.mdesc = [rs stringForColumn:@"mdesc"];
+                        model.mid = [NSString stringWithFormat:@"%d",[rs intForColumn:@"mid"]];
+                        model.manswer = [rs stringForColumn:@"manswer"];
+                        model.pname = [rs stringForColumn:@"pname"];
+                        model.pid = [NSString stringWithFormat:@"%d",[rs intForColumn:@"pid"]];
+                        model.sid = [NSString stringWithFormat:@"%d",[rs intForColumn:@"sid"]];
+                        model.sname = [rs stringForColumn:@"sname"];
+                        model.mtype = [NSString stringWithFormat:@"%d",[rs intForColumn:@"mtype"]];
+                        [array addObject:model];
+                        
+                    }
+                 }
+                    break;
+                    
         default:
             break;
     }
