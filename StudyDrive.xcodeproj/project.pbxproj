@@ -183,6 +183,7 @@
 		E60EBBCF1CDAF7860078E232 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBCD1CDAF7860078E232 /* AnswerTableViewCell.m */; };
 		E60EBBD01CDAF7860078E232 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */; };
 		E60EBBD31CDB3E020078E232 /* AnsmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */; };
+		E64177091CDC85D90089DF41 /* AnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64177081CDC85D90089DF41 /* AnswerModel.m */; };
 		E67900261CD83D8B0092BEEA /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E67900251CD83D8B0092BEEA /* SelectView.m */; };
 		E6FFF3311CD2539600C9FA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3301CD2539600C9FA7C /* main.m */; };
 		E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3331CD2539600C9FA7C /* AppDelegate.m */; };
@@ -429,6 +430,8 @@
 		E60EBBCE1CDAF7860078E232 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		E60EBBD11CDB3E020078E232 /* AnsmerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnsmerViewController.h; sourceTree = "<group>"; };
 		E60EBBD21CDB3E020078E232 /* AnsmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsmerViewController.m; sourceTree = "<group>"; };
+		E64177071CDC85D90089DF41 /* AnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerModel.h; sourceTree = "<group>"; };
+		E64177081CDC85D90089DF41 /* AnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerModel.m; sourceTree = "<group>"; };
 		E67900241CD83D8B0092BEEA /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		E67900251CD83D8B0092BEEA /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		E6FFF32C1CD2539600C9FA7C /* StudyDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -731,6 +734,8 @@
 			children = (
 				E6033C581CDA4AFD00ABD78F /* TestSelectModle.h */,
 				E6033C591CDA4AFD00ABD78F /* TestSelectModle.m */,
+				E64177071CDC85D90089DF41 /* AnswerModel.h */,
+				E64177081CDC85D90089DF41 /* AnswerModel.m */,
 			);
 			name = modle;
 			sourceTree = "<group>";
@@ -1180,6 +1185,7 @@
 				E6033C4F1CDA423300ABD78F /* FMResultSet.m in Sources */,
 				E6033C5A1CDA4AFD00ABD78F /* TestSelectModle.m in Sources */,
 				E6033C4D1CDA423300ABD78F /* FMDatabasePool.m in Sources */,
+				E64177091CDC85D90089DF41 /* AnswerModel.m in Sources */,
 				E6033AED1CD9AF1800ABD78F /* FirstViewController.m in Sources */,
 				E67900261CD83D8B0092BEEA /* SelectView.m in Sources */,
 				E60EBBD31CDB3E020078E232 /* AnsmerViewController.m in Sources */,

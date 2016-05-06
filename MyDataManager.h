@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 typedef enum {
-    chapter//章节练习
+    chapter,//章节练习
+    answer,//答题数据
 }DataType;
 @interface MyDataManager : NSObject
 //?
