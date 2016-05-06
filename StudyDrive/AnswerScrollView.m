@@ -27,6 +27,7 @@
     if (self) {
         _dataArray = [[NSArray alloc]initWithArray:array];
         _scrollView = [[UIScrollView alloc]initWithFrame:frame];
+        _scrollView.delegate=self;
         _leftTableView=[[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
          _rightTableView=[[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
          _mainTableView=[[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
@@ -40,9 +41,11 @@
         //翻页效果
         _scrollView.pagingEnabled=YES;
         //回弹效果取消
+        _scrollView.showsHorizontalScrollIndicator=NO;
+        _scrollView.showsVerticalScrollIndicator=NO;
         _scrollView.bounces=NO;
         if (_dataArray.count>1) {
-            _scrollView.contentSize=CGSizeMake(SIZE.width*2, 0);
+            _scrollView.contentSize=CGSizeMake(SIZE.width*_dataArray.count, 0);
         }
         [self creatView];
     }
@@ -84,6 +87,7 @@
     }
     cell.numberLabel.text=[NSString stringWithFormat:@"%c",(char)('A'+indexPath.row)];
     return cell;
+    
     
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollVie
