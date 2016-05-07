@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>StudyDrive copy copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>StudyDrive copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>StudyDrive.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E6DA737A1CDDDA06001A1FCA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6DA74571CDDDA0C001A1FCA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E6FFF32B1CD2539600C9FA7C</key>
 		<dict>
 			<key>primary</key>

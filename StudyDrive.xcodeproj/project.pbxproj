@@ -437,6 +437,8 @@
 		E641770B1CDCC6220089DF41 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E67900241CD83D8B0092BEEA /* SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectView.h; sourceTree = "<group>"; };
 		E67900251CD83D8B0092BEEA /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
+		E6DA74561CDDDA06001A1FCA /* StudyDrive copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StudyDrive copy-Info.plist"; path = "/Users/chenkuntao/Developer/StudyDrive/StudyDrive copy-Info.plist"; sourceTree = "<absolute>"; };
+		E6DA75331CDDDA0D001A1FCA /* StudyDrive copy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StudyDrive copy copy-Info.plist"; path = "/Users/chenkuntao/Developer/StudyDrive/StudyDrive copy copy-Info.plist"; sourceTree = "<absolute>"; };
 		E6FFF32C1CD2539600C9FA7C /* StudyDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FFF3301CD2539600C9FA7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6FFF3321CD2539600C9FA7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -765,6 +767,8 @@
 				E6FFF3481CD2539700C9FA7C /* StudyDriveTests */,
 				E6FFF3531CD2539700C9FA7C /* StudyDriveUITests */,
 				E6FFF32D1CD2539600C9FA7C /* Products */,
+				E6DA74561CDDDA06001A1FCA /* StudyDrive copy-Info.plist */,
+				E6DA75331CDDDA0D001A1FCA /* StudyDrive copy copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

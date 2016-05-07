@@ -71,14 +71,91 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  4;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    AnswerModel *model = [self getTheFitModel:tableView];
+    UIFont *font =[UIFont systemFontOfSize:16];
+    NSString *str =[NSString stringWithFormat:@"答案解析:%@",model.mdesc];
+    return  [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+  
+
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 100;
+    AnswerModel *model = [self getTheFitModel:tableView];
+    //判断是选择还是判断题
+    CGFloat hight;
+    if ([model.mtype intValue]==1) {
+        NSString *str =[[Tools getAnswerWithString:model.mquestion]objectAtIndex:0];
+        UIFont *font =[UIFont systemFontOfSize:16];
+        hight = [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+    }else{
+        NSString *str =model.mquestion;
+        UIFont *font =[UIFont systemFontOfSize:16];
+        hight = [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+    }
+    if (hight<=80) {
+        return  80;
+    }else{
+        return hight;
+    }
+}
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    AnswerModel *model = [self getTheFitModel:tableView];
+    //判断是选择还是判断题
+    CGFloat hight;
+    NSString *str;
+    str =[NSString stringWithFormat:@"答案解析:%@",model.mdesc];
+    UIFont *font =[UIFont systemFontOfSize:16];
+    hight = [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SIZE.width,hight)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, tableView.frame.size.width-20, hight-20)];
+    label.text=str;
+    label.font=[UIFont systemFontOfSize:16];
+    label.textColor=[UIColor greenColor];
+    label.numberOfLines=0;
+    [view addSubview:label];
+    return view;
+
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SIZE.width,100)];
-    view.backgroundColor = [UIColor redColor];
+    AnswerModel *model = [self getTheFitModel:tableView];
+    //判断是选择还是判断题
+    CGFloat hight;
+    NSString *str;
+    if ([model.mtype intValue]==1) {
+        str =[[Tools getAnswerWithString:model.mquestion]objectAtIndex:0];
+        UIFont *font =[UIFont systemFontOfSize:16];
+        hight = [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+    }else{
+        str =model.mquestion;
+        UIFont *font =[UIFont systemFontOfSize:16];
+        hight = [Tools getSizeWithString:str with:font withSize:CGSizeMake(tableView.frame.size.width-20, 400)].height+20;
+    }
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SIZE.width,hight)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, tableView.frame.size.width-20, hight-20)];
+    label.text=[NSString stringWithFormat:@"%d.%@",[self getQuestionNumber:tableView andCurrentPage:_currentPages],str];
+    label.font=[UIFont systemFontOfSize:16];
+    label.numberOfLines=0;
+    [view addSubview:label];
     return view;
     
+}
+-(int)getQuestionNumber:(UITableView *)tableView andCurrentPage:(int)page{
+    if (tableView==_leftTableView&&page==0) {
+        return 1;
+    }else if(tableView==_leftTableView&&page>0){
+        return page;
+    }else if(tableView==_mainTableView&&page>0&&page<_dataArray.count-1){
+        return  page+1;
+    }else if(tableView==_mainTableView&&page==0){
+        return 2;
+    }else if(tableView==_mainTableView&&page==_dataArray.count-1){
+        return page;
+    }else if(tableView==_rightTableView&&page==0){
+        return page+2;
+    }else if(tableView==_rightTableView&&page<_dataArray.count-1){
+        return page+1;
+    }
+    return 0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID = @"AnswerTableViewCell";
@@ -89,6 +166,17 @@
         cell.numberLabel.layer.cornerRadius=10;
     }
     cell.numberLabel.text=[NSString stringWithFormat:@"%c",(char)('A'+indexPath.row)];
+    AnswerModel * model=[self getTheFitModel:tableView];
+     //选择题
+    if ( [model.mtype intValue]==1) {
+        cell.answerLabel.text=[[Tools getAnswerWithString:model.mquestion]objectAtIndex:indexPath.row+1];
+    }
+    return cell;
+    
+    
+}
+//??
+-(AnswerModel *)getTheFitModel:(UITableView *)tableView{
     AnswerModel *model;
     //左边分为两种情况1.第一页时
     //2.不是第一页是加载前一页的数据
@@ -107,13 +195,8 @@
     }else if(tableView==_rightTableView&&_currentPages<_dataArray.count-1){
         model=_dataArray[_currentPages+1];
     }
-    //选择题
-    if ( [model.mtype intValue]==1) {
-        cell.answerLabel.text=[[Tools getAnswerWithString:model.mquestion]objectAtIndex:indexPath.row+1];
-    }
-    return cell;
-    
-    
+    return model; 
+
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollVie
 {

@@ -7,7 +7,7 @@
 //
 
 #import "Tools.h"
-
+#
 @implementation Tools
 +(NSArray *)getAnswerWithString:(NSString *)str{
     NSMutableArray *array=[[NSMutableArray alloc]init];
@@ -18,4 +18,11 @@
     }
     return array;
 }
++(CGSize)getSizeWithString:(NSString *)str with:(UIFont *)font withSize:(CGSize)size{
+    CGSize newSize = [str sizeWithFont:font constrainedToSize:size];
+    return newSize;
+    
+    
+}
+
 @end
