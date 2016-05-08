@@ -22,6 +22,7 @@
     UITableView * _rightTableView;
     UITableView * _mainTableView;
     NSArray * _dataArray;
+    NSMutableArray *_hadAnswerArray;
     
 }
 -(instancetype)initWithFrame:(CGRect)frame whiteDataArray:(NSArray *)array{
@@ -29,6 +30,10 @@
     if (self) {
         _currentPages =0;
         _dataArray = [[NSArray alloc]initWithArray:array];
+        _hadAnswerArray =[[NSMutableArray alloc]init];
+        for (int i =0; i<array.count-1; i++) {
+            [_hadAnswerArray addObject:@"0"];
+        }
         _scrollView = [[UIScrollView alloc]initWithFrame:frame];
         _scrollView.delegate=self;
         _leftTableView=[[UITableView alloc]initWithFrame:frame style:UITableViewStyleGrouped];
@@ -113,7 +118,11 @@
     label.textColor=[UIColor greenColor];
     label.numberOfLines=0;
     [view addSubview:label];
-    return view;
+    int page =[self getQuestionNumber:tableView andCurrentPage:_currentPages];
+    if ([_hadAnswerArray[page-1] intValue]!=0) {
+        return view;
+    }
+     return nil;
 
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -157,6 +166,16 @@
     }
     return 0;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    int page =[self getQuestionNumber:tableView andCurrentPage:_currentPages];
+    if ([_hadAnswerArray[page-1] intValue]!=0) {
+        return;
+    }else{
+        [_hadAnswerArray replaceObjectAtIndex:page-1 withObject:[NSString stringWithFormat:@"%ld",indexPath.row+1]];
+    }
+    [self reloadData];
+
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID = @"AnswerTableViewCell";
     AnswerTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cellID"];
@@ -164,6 +183,7 @@
         cell =[[[NSBundle mainBundle]loadNibNamed:@"AnswerTableViewCell" owner:self options:nil]lastObject];
         cell.numberLabel.layer.masksToBounds=YES;
         cell.numberLabel.layer.cornerRadius=10;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     cell.numberLabel.text=[NSString stringWithFormat:@"%c",(char)('A'+indexPath.row)];
     AnswerModel * model=[self getTheFitModel:tableView];
@@ -171,8 +191,20 @@
     if ( [model.mtype intValue]==1) {
         cell.answerLabel.text=[[Tools getAnswerWithString:model.mquestion]objectAtIndex:indexPath.row+1];
     }
-    return cell;
-    
+    int page =[self getQuestionNumber:tableView andCurrentPage:_currentPages];
+    if ([_hadAnswerArray[page-1]intValue]!=0) {
+        if ([model.manswer isEqualToString:[NSString stringWithFormat:@"%c",'A'+(int)indexPath.row]]) {
+            cell.numberImager.hidden = NO;
+            cell.numberImager.image = [UIImage imageNamed:@"19.png"];
+        } else if (![model.manswer isEqualToString:[NSString stringWithFormat:@"%c",'A'+[_hadAnswerArray[page-1]intValue]-1]]&&indexPath.row==[_hadAnswerArray[page-1]intValue]-1) {
+            cell.numberImager.hidden = NO;
+            cell.numberImager.image = [UIImage imageNamed:@"20.png"];
+        } else {
+            cell.numberImager.hidden = YES;
+        }
+    } else {
+        cell.numberImager.hidden = YES;
+    }    return cell;
     
 }
 //??
