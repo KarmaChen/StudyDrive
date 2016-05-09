@@ -10,9 +10,13 @@
 #import "AnswerScrollView.h"
 #import "MyDataManager.h"
 #import "AnswerModel.h"
+<<<<<<< HEAD
 @interface AnsmerViewController (){
     AnswerScrollView * view;
 }
+=======
+@interface AnsmerViewController ()
+>>>>>>> a37e380381f7ab2996b779f766005115501241bb
 
 @end
 
@@ -31,6 +35,7 @@
             [arr addObject:model];
         }
     }
+<<<<<<< HEAD
      view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-60) whiteDataArray:arr];
     [self.view addSubview:view];
     [self creatToolBar];
@@ -76,6 +81,10 @@
     }
     
     
+=======
+    AnswerScrollView * view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) whiteDataArray:arr];
+    [self.view addSubview:view];
+>>>>>>> a37e380381f7ab2996b779f766005115501241bb
 }
 
 - (void)didReceiveMemoryWarning {
