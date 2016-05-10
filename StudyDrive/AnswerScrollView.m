@@ -21,11 +21,9 @@
     UITableView * _leftTableView;
     UITableView * _rightTableView;
     UITableView * _mainTableView;
-<<<<<<< HEAD
-=======
+
     NSArray * _dataArray;
     NSMutableArray *_hadAnswerArray;
->>>>>>> a37e380381f7ab2996b779f766005115501241bb
     
 }
 -(instancetype)initWithFrame:(CGRect)frame whiteDataArray:(NSArray *)array{

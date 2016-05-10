@@ -11,10 +11,7 @@
 @interface AnswerScrollView : UIView
 -(instancetype)initWithFrame:(CGRect)frame whiteDataArray:(NSArray *)array;
 @property(nonatomic,assign,readonly)int currentPages;
-<<<<<<< HEAD
 @property(nonatomic,strong)NSMutableArray *hadAnswerArray;
 @property(nonatomic,strong)NSArray * dataArray;
 - (void)reloadData;
-=======
->>>>>>> a37e380381f7ab2996b779f766005115501241bb
 @end

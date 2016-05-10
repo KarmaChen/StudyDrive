@@ -10,13 +10,13 @@
 #import "AnswerScrollView.h"
 #import "MyDataManager.h"
 #import "AnswerModel.h"
-<<<<<<< HEAD
+#import "SelectModelView.h"
 @interface AnsmerViewController (){
     AnswerScrollView * view;
+    SelectModelView *modelView;
 }
-=======
+@end
 @interface AnsmerViewController ()
->>>>>>> a37e380381f7ab2996b779f766005115501241bb
 
 @end
 
@@ -35,11 +35,29 @@
             [arr addObject:model];
         }
     }
-<<<<<<< HEAD
+
      view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-60) whiteDataArray:arr];
     [self.view addSubview:view];
     [self creatToolBar];
+    [self creatModelView];
 }
+
+-(void)creatModelView{
+    modelView = [[SelectModelView alloc]initWithFrame:self.view.frame addTouch:^(SelectModel model) {
+        NSLog(@"当前模式:%d",model);
+    }];
+    [self.view addSubview:modelView];
+    modelView.alpha=0;
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithTitle:@"答题模式" style:UIBarButtonItemStylePlain target:self action:@selector(modelChange:)];
+    self.navigationItem.rightBarButtonItem=item;
+}
+
+-(void)modelChange:(UIBarButtonItem*)item{
+    [UIView animateWithDuration:0.3 animations:^{
+        modelView.alpha=1;
+    }];
+}
+
 -(void)creatToolBar{
     UIView *barView =[[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-60-64, self.view.frame.size.width, 60)];
     barView.backgroundColor=[UIColor whiteColor];
@@ -80,11 +98,6 @@
             break;
     }
     
-    
-=======
-    AnswerScrollView * view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) whiteDataArray:arr];
-    [self.view addSubview:view];
->>>>>>> a37e380381f7ab2996b779f766005115501241bb
 }
 
 - (void)didReceiveMemoryWarning {
