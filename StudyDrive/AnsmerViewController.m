@@ -11,9 +11,11 @@
 #import "MyDataManager.h"
 #import "AnswerModel.h"
 #import "SelectModelView.h"
+#import "SheetView.h"
 @interface AnsmerViewController (){
     AnswerScrollView * view;
     SelectModelView *modelView;
+     SheetView * _sheetView;
 }
 @end
 @interface AnsmerViewController ()
@@ -40,7 +42,13 @@
     [self.view addSubview:view];
     [self creatToolBar];
     [self creatModelView];
+    [self creatSheetView];
 }
+-(void)creatSheetView{
+    _sheetView = [[SheetView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-80)withSuperView:_sheetView];
+    [self.view addSubview:_sheetView];
+}
+
 
 -(void)creatModelView{
     modelView = [[SelectModelView alloc]initWithFrame:self.view.frame addTouch:^(SelectModel model) {
@@ -80,6 +88,14 @@
 }
 -(void)clikToolBar:(UIButton *)btn{
     switch (btn.tag) {
+        case 301:
+        {
+            [UIView animateWithDuration:0.3 animations:^{
+                _sheetView.frame=CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height-80);
+               
+            }];
+        }
+            break;
         case 302://查看答案
         {
             if ([view.hadAnswerArray[view.currentPages] intValue]!=0) {

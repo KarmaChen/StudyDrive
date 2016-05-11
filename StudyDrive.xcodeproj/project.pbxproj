@@ -187,6 +187,7 @@
 		E641770C1CDCC6220089DF41 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E641770B1CDCC6220089DF41 /* Tools.m */; };
 		E649FEB41CE190EF00F4EB3B /* SelectModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E649FEB31CE190EF00F4EB3B /* SelectModelView.m */; };
 		E67900261CD83D8B0092BEEA /* SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E67900251CD83D8B0092BEEA /* SelectView.m */; };
+		E6EEB4BE1CE3126300934F3F /* SheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EEB4BD1CE3126300934F3F /* SheetView.m */; };
 		E6FFF3311CD2539600C9FA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3301CD2539600C9FA7C /* main.m */; };
 		E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3331CD2539600C9FA7C /* AppDelegate.m */; };
 		E6FFF3371CD2539600C9FA7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FFF3361CD2539600C9FA7C /* ViewController.m */; };
@@ -442,6 +443,8 @@
 		E67900251CD83D8B0092BEEA /* SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectView.m; sourceTree = "<group>"; };
 		E6DA74561CDDDA06001A1FCA /* StudyDrive copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StudyDrive copy-Info.plist"; path = "/Users/chenkuntao/Developer/StudyDrive/StudyDrive copy-Info.plist"; sourceTree = "<absolute>"; };
 		E6DA75331CDDDA0D001A1FCA /* StudyDrive copy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StudyDrive copy copy-Info.plist"; path = "/Users/chenkuntao/Developer/StudyDrive/StudyDrive copy copy-Info.plist"; sourceTree = "<absolute>"; };
+		E6EEB4BC1CE3126300934F3F /* SheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetView.h; sourceTree = "<group>"; };
+		E6EEB4BD1CE3126300934F3F /* SheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetView.m; sourceTree = "<group>"; };
 		E6FFF32C1CD2539600C9FA7C /* StudyDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FFF3301CD2539600C9FA7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6FFF3321CD2539600C9FA7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -757,6 +760,8 @@
 				E60EBBCA1CDAEAC40078E232 /* AnswerScrollView.m */,
 				E649FEB21CE190EF00F4EB3B /* SelectModelView.h */,
 				E649FEB31CE190EF00F4EB3B /* SelectModelView.m */,
+				E6EEB4BC1CE3126300934F3F /* SheetView.h */,
+				E6EEB4BD1CE3126300934F3F /* SheetView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1189,6 +1194,7 @@
 			files = (
 				E6FFF3371CD2539600C9FA7C /* ViewController.m in Sources */,
 				E6FFF3341CD2539600C9FA7C /* AppDelegate.m in Sources */,
+				E6EEB4BE1CE3126300934F3F /* SheetView.m in Sources */,
 				E60EBBCF1CDAF7860078E232 /* AnswerTableViewCell.m in Sources */,
 				E6033AF51CD9E39300ABD78F /* FirstTableViewCell.m in Sources */,
 				E6033C561CDA444A00ABD78F /* MyDataManager.m in Sources */,
