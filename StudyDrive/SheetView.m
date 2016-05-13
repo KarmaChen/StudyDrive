@@ -10,19 +10,20 @@
 
 @interface SheetView()
 {
-    UIView *_backView;
     UIView *_superView;
     BOOL _startMoving;
     float _hight;
     float _width;
     float _y;
+    UIScrollView * _scrollView;
+    int _count;
+
 }
 
 @end
 
 @implementation SheetView
--(instancetype)initWithFrame:(CGRect)frame withSuperView:(UIView *)superView
-{
+- (instancetype)initWithFrame:(CGRect)frame withSuperView:(UIView *)superView andQuesCount:(int)count {
     self =[super initWithFrame:frame];
     if (self) {
         self.backgroundColor=[UIColor whiteColor];
@@ -30,15 +31,35 @@
         _width=frame.size.width;
         _y=frame.origin.y;
         _superView=superView;
+        _count=count;
         [self creatView];
     }
     return self;
 }
 -(void)creatView{
     _backView=[[UIView alloc]initWithFrame:_superView.frame];
-    _backView.backgroundColor=[UIColor grayColor];
+    _backView.backgroundColor=[UIColor blackColor];
     _backView.alpha=0;
     [_superView addSubview:_backView];
+    
+    
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 70, self.frame.size.width, self.frame.size.height-70)];
+    _scrollView.backgroundColor=[UIColor redColor];
+    [self addSubview:_scrollView];
+    
+    for (int i=0; i<_count; i++) {
+        
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.frame=CGRectMake((_width-44*6)/2+44*(i%6), 10+44*(i/6), 40, 40);
+        btn.backgroundColor=[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
+        
+        [btn setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
+        btn.layer.masksToBounds=YES;
+        btn.layer.cornerRadius=8;
+        [_scrollView addSubview:btn];
+    }
+    int tip = (_count%6)?1:0;
+    _scrollView.contentSize=CGSizeMake(0, 20+44*(_count/6+1+tip));
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch * touch = [touches anyObject];
@@ -46,10 +67,13 @@
     if (point.y<25) {
         _startMoving=YES;
     }
-    if (_startMoving&&self.frame.origin.y>=_y-_hight) {
+    if (_startMoving&&self.frame.origin.y>=_y-_hight&&[self convertPoint:point toView:_superView].y>=80) {
         self.frame=CGRectMake(0, [self convertPoint:point toView:_superView].y, _width, _hight);
-            }
+        float offset = (_superView.frame.size.height-self.frame.origin.y)/_superView.frame.size.height*0.8;
+        _backView.alpha=offset;
+    }
 }
+
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     _startMoving=NO;
@@ -65,7 +89,6 @@
         }];
     }
 }
-
 
 
 @end

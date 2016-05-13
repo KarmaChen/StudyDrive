@@ -45,9 +45,11 @@
     [self creatSheetView];
 }
 -(void)creatSheetView{
-    _sheetView = [[SheetView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-80)withSuperView:_sheetView];
-    [self.view addSubview:_sheetView];
-}
+    
+        _sheetView = [[SheetView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-80) withSuperView:self.view andQuesCount:50];
+        [self.view addSubview:_sheetView];
+    }
+
 
 
 -(void)creatModelView{
@@ -92,6 +94,7 @@
         {
             [UIView animateWithDuration:0.3 animations:^{
                 _sheetView.frame=CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height-80);
+                _sheetView ->_backView.alpha=0.8;
                
             }];
         }
