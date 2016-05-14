@@ -13,7 +13,7 @@
 #import "SelectModelView.h"
 #import "SheetView.h"
 @interface AnsmerViewController (){
-    AnswerScrollView * view;
+    AnswerScrollView * _answerScrollView;
     SelectModelView *modelView;
      SheetView * _sheetView;
 }
@@ -38,11 +38,12 @@
         }
     }
 
-     view=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-60) whiteDataArray:arr];
-    [self.view addSubview:view];
+     _answerScrollView=[[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-60) whiteDataArray:arr];
+    [self.view addSubview:_answerScrollView];
     [self creatToolBar];
     [self creatModelView];
     [self creatSheetView];
+    
 }
 -(void)creatSheetView{
     
@@ -51,7 +52,13 @@
     }
 
 
-
+#pragma mark - delegate
+-(void)SheetViewClick:(int)index{
+    UIScrollView * scroll = _answerScrollView->_scrollView;
+    scroll.contentOffset=CGPointMake((index-1)*scroll.frame.size.width, 0);
+    [scroll.delegate scrollViewDidEndDecelerating:scroll];
+    
+}
 -(void)creatModelView{
     modelView = [[SelectModelView alloc]initWithFrame:self.view.frame addTouch:^(SelectModel model) {
         NSLog(@"当前模式:%d",model);
@@ -101,14 +108,16 @@
             break;
         case 302://查看答案
         {
-            if ([view.hadAnswerArray[view.currentPages] intValue]!=0) {
-                return;
-            }else{
-                AnswerModel *model =[view.dataArray objectAtIndex:view.currentPages];
-                NSString* answer =model.manswer;
-                char an =[answer characterAtIndex:0];
-                [view.hadAnswerArray replaceObjectAtIndex:view.currentPages withObject:[NSString stringWithFormat:@"%d",an-'A'+1]];
-                [view reloadData];
+            
+                if ([_answerScrollView.hadAnswerArray[_answerScrollView.currentPages] intValue]!=0) {
+                    return;
+                }else{
+                    AnswerModel * model = [_answerScrollView.dataArray objectAtIndex:_answerScrollView.currentPages];
+                    NSString * answer = model.manswer;
+                    char an = [answer characterAtIndex:0];
+                    
+                    [_answerScrollView.hadAnswerArray replaceObjectAtIndex:_answerScrollView.currentPages withObject:[NSString stringWithFormat:@"%d",an-'A'+1]];
+                    [_answerScrollView reloadData];
             }
         }
             break;

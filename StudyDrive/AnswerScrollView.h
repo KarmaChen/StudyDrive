@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface AnswerScrollView : UIView
+{
+    @public
+    UIScrollView *_scrollView;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame whiteDataArray:(NSArray *)array;
 @property(nonatomic,assign,readonly)int currentPages;
 @property(nonatomic,strong)NSMutableArray *hadAnswerArray;
